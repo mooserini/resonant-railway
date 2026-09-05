@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "start:local": "node --env-file=.env dist/index.js",
+    "db:check": "node --env-file=.env dist/db-check.js",
+    "test": "npm run build && node --test test/*.test.cjs"
   },
+  "engines": { "node": ">=22.13.0" },
   "keywords": [],
   "author": "",
   "license": "ISC",
