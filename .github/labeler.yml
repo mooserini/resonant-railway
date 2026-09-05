@@ -1,0 +1,3 @@
+# Path rules for actions/labeler@v4.
+documentation:
+  - '**/*.md'
