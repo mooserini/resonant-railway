@@ -1,0 +1,27 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/healthz",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "CLOUDFLARE_ACCOUNT_ID",
+      "description": "Cloudflare account ID (32 hex chars) containing your D1 database — find it in the Cloudflare dashboard sidebar",
+      "requiredAtBoot": true
+    },
+    {
+      "name": "CLOUDFLARE_D1_DATABASE_ID",
+      "description": "UUID of your Cloudflare D1 database — find it in Cloudflare Dashboard > Workers & Pages > D1",
+      "requiredAtBoot": true
+    },
+    {
+      "name": "CLOUDFLARE_API_TOKEN",
+      "description": "Cloudflare API token with Account / D1 / Edit permission — create at Cloudflare > My Profile > API Tokens",
+      "requiredAtBoot": true
+    },
+    {
+      "name": "MCP_AUTH_TOKEN",
+      "description": "A random secret (32+ chars, no whitespace) shared with your MCP client to authenticate /mcp requests — generate with `openssl rand -hex 32`",
+      "requiredAtBoot": true
+    }
+  ]
+}
