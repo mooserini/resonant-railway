@@ -74,6 +74,11 @@ and start command to `npm start`, and use `/healthz` as the healthcheck path.
 Railway supplies `PORT`. Configure credentials before exposing the service's
 public domain. The server binds to `0.0.0.0` for Railway routing.
 
+The public domain's target port must match the server's listening port. Check
+the startup log (`MCP server listening on port ...`) and set the domain's target
+port to that value. A mismatch can return HTTP 502 even when the deployment's
+healthcheck passes.
+
 `npm start` uses injected environment variables; `.env` is only loaded by the
 local commands. Keep the same `MCP_AUTH_TOKEN` configured in the client and
 service across redeployments. Updating it revokes clients using the old value.
