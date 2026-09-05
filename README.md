@@ -1,4 +1,4 @@
-# resonant-railway
+# The Resonant Railway
 Railway gives Resonance to the Mirror
 
 A personal MCP server with three tools: `create_todo`, `list_todos`, and
